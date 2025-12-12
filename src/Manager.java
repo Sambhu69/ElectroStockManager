@@ -1,5 +1,6 @@
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -225,9 +226,30 @@ public class Manager extends javax.swing.JPanel {
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
-
+//Login Page Logic
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        // TODO add your handling code here:
+       String username = jTextField1.getText();
+       String password = new String(jPasswordField1.getPassword());
+
+        if (username.equals("admin") && password.equals("password")) {
+            // Login Successful
+            JOptionPane.showMessageDialog(this, "Login Successful!");
+
+            // 1. Close this Login Window
+            SwingUtilities.getWindowAncestor(this).dispose();
+
+            /* 2. Open the Main System*/
+            try {
+                 // Change 'MainSystem' to whatever your actual class name is
+                new System().setVisible(true); 
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Could not open System window. \nCheck if class exists.");
+            }
+            
+        } else {
+            // Login Failed
+            JOptionPane.showMessageDialog(this, "Invalid Username or Password", "Login Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_button1ActionPerformed
    
 
@@ -249,7 +271,8 @@ public class Manager extends javax.swing.JPanel {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-public static void main(String[] args) {
+
+    public static void main(String[] args) {
         // ensure GUI is created on the EDT
         SwingUtilities.invokeLater(() -> {
             try {
