@@ -1,3 +1,5 @@
+package views;
+
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -54,6 +56,7 @@ public class Manager extends javax.swing.JPanel {
         jMenuItem2.setText("jMenuItem2");
 
         setBackground(new java.awt.Color(204, 255, 255));
+        setName(""); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 153));
 
@@ -110,6 +113,7 @@ public class Manager extends javax.swing.JPanel {
         checkbox1.setName(""); // NOI18N
 
         button1.setBackground(new java.awt.Color(0, 51, 153));
+        button1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         button1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         button1.setForeground(new java.awt.Color(255, 255, 255));
         button1.setLabel("Log In");
@@ -241,7 +245,7 @@ public class Manager extends javax.swing.JPanel {
             /* 2. Open the Main System*/
             try {
                  // Change 'MainSystem' to whatever your actual class name is
-                new System().setVisible(true); 
+                new StockMainView().setVisible(true); 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Could not open System window. \nCheck if class exists.");
             }
