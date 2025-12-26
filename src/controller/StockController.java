@@ -4,10 +4,6 @@
  */
 package controller;
 
-/**
- *
- * @author ACER
- */
 import model.ProductModel;
 import java.util.LinkedList;
 

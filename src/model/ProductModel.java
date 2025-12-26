@@ -4,10 +4,6 @@
  */
 package model;
 
-/**
- *
- * @author ACER
- */
 public class ProductModel {
     private String productId;
     private String modelNumber;
