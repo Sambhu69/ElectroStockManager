@@ -915,7 +915,7 @@ public class StockMainView extends javax.swing.JFrame {
             singleResult.add(binaryMatch);
             loadTable(singleResult);
 
-            // SAFE POPUP
+            // POPUP
             JOptionPane.showMessageDialog(this, "Product found by ID!");
             jTextField2.setText("");
             return;
@@ -929,7 +929,7 @@ public class StockMainView extends javax.swing.JFrame {
         } else {
             loadTable(new LinkedList<>());
 
-            // SAFE POPUP
+            // POPUP
             JOptionPane.showMessageDialog(this, "No products found for: " + query);
         }
     }// GEN-LAST:event_jButton6ActionPerformed
